@@ -1,0 +1,468 @@
+{
+	"info": {
+		"_postman_id": "dc64b1d0-52d6-4b30-b6b2-bb89c8dc7cba",
+		"name": "SatelliteMonitorApis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17444880"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "AddUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Akarinchan",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "permission",
+									"value": "ADMIN",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/AddUser",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"AddUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindUserById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "userId",
+									"value": "4299f255-ab9c-4fbd-8e8d-a2cd6eb6fbd7",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/FindUserById",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"FindUserById"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserTest",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "pageNumber",
+									"value": "14",
+									"type": "text"
+								},
+								{
+									"key": "pageSize",
+									"value": "205",
+									"type": "text"
+								},
+								{
+									"key": "userId",
+									"value": "111111sdf",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/usertest",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usertest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindUsersByName",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Aka",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/FindUserByName",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"FindUserByName"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "pageSize",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "pageNumber",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "query",
+									"value": "{\"userPermission\": \"ADMIN\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ListUser",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ListUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "a4faae3b-ddae-41a8-b37c-d534420dea32",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RefreshToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/RefreshToken",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"RefreshToken"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImE0ZmFhZTNiLWRkYWUtNDFhOC1iMzdjLWQ1MzQ0MjBkZWEzMiIsInVzZXJOYW1lIjoiQWthcmluY2hhbiIsInVzZXJQZXJtaXNzaW9uIjoiQURNSU4iLCJleHAiOjIwMDAwMDAwMDB9.ptO9am1D6zXKL82r0a41Y8R8d07Cqn0ueopCeguRyv4",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Prom",
+			"item": [
+				{
+					"name": "清空数据",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1/admin/tsdb/clean_tombstones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"tsdb",
+								"clean_tombstones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "删除数据",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/v1/admin/tsdb/delete_series?match[]=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"tsdb",
+								"delete_series"
+							],
+							"query": [
+								{
+									"key": "match[]",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查询数据",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "query",
+									"value": "cpu_usage_percent {instance=\"ae89f234-e6ae-4831-8745-695143aae19b\"}",
+									"type": "text"
+								},
+								{
+									"key": "start",
+									"value": "1672921976.576",
+									"type": "text"
+								},
+								{
+									"key": "end",
+									"value": "1672923776.595",
+									"type": "text"
+								},
+								{
+									"key": "step",
+									"value": "18s",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/v1/query_range",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"query_range"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "cpu_load_percent{instance=\"f4b52194-aafa-4c71-9e02-6599b11947bd\"}[1672903808972:now]",
+									"disabled": true
+								},
+								{
+									"key": "start",
+									"value": "1672921976576",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ResourceType",
+			"item": [
+				{
+					"name": "ListResourceType",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "pageSize",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "pageNumber",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ListResourceType",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ListResourceType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListAllResourceType",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/ListAllResourceType",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ListAllResourceType"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImViZjcyNTEyLTkxYWItNDQ5MS04YWU5LTllYmY3OTk1NDQyZSIsInVzZXJOYW1lIjoiQWthcmljaGFuIiwidXNlclBlcm1pc3Npb24iOiJBRE1JTiIsImV4cCI6MjAwMDAwMDAwMH0.faK-Z_WfuoHbExAon547AwqsGv_tW2P_yNgeawP13tY",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:30000",
+			"type": "string"
+		}
+	]
+}

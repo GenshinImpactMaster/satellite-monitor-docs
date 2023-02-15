@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "api:doc": "postman-to-markdown ./postman/SatelliteMonitorApis.json ./docs/for-dev/server/postman.md"
+  },
+  "dependencies": {
+    "@onachi/postman-to-markdown": "^1.0.7"
+  }
+}
