@@ -76,7 +76,7 @@ git clone -b dev https://github.com/TachibanaKimika/satellite-monitor-docs.git
 pnpm start:main
 ```
 
-# 文件结构
+<!-- # 文件结构
 - server # 服务端(包括SpringBoot和Nodejs两个后端)的项目文档
   - apis.md # api文档(postman导出markdown)
   - docs.md # 相关架构文档
@@ -87,4 +87,4 @@ pnpm start:main
   - config # 各个配置文件的存放点
   - promthues.md
   - alertmanager.md
-  - exporter.md
+  - exporter.md -->
