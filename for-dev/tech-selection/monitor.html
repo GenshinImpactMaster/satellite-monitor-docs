@@ -1,0 +1,1181 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../server/postman.html">
+      
+      
+        <link rel="next" href="../../for-user/quick-start.html">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
+    
+    
+      
+        <title>技术选型 - satellite-monitor-docs(WIP)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7bf56d0a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../index.html" title="satellite-monitor-docs(WIP)" class="md-header__button md-logo" aria-label="satellite-monitor-docs(WIP)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m20.71 4.63-1.34-1.34c-.37-.39-1.02-.39-1.41 0L9 12.25 11.75 15l8.96-8.96c.39-.39.39-1.04 0-1.41M7 14a3 3 0 0 0-3 3c0 1.31-1.16 2-2 2 .92 1.22 2.5 2 4 2a4 4 0 0 0 4-4 3 3 0 0 0-3-3Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            satellite-monitor-docs(WIP)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              技术选型
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/GenshinImpactMaster/satellite-monitor-docs" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="satellite-monitor-docs(WIP)" class="md-nav__button md-logo" aria-label="satellite-monitor-docs(WIP)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m20.71 4.63-1.34-1.34c-.37-.39-1.02-.39-1.41 0L9 12.25 11.75 15l8.96-8.96c.39-.39.39-1.04 0-1.41M7 14a3 3 0 0 0-3 3c0 1.31-1.16 2-2 2 .92 1.22 2.5 2 4 2a4 4 0 0 0 4-4 3 3 0 0 0-3-3Z"/></svg>
+
+    </a>
+    satellite-monitor-docs(WIP)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/GenshinImpactMaster/satellite-monitor-docs" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        首页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          For dev
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          For dev
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demand.html" class="md-nav__link">
+        需求文档
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs.html" class="md-nav__link">
+        文档开发(TODO)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-structure.html" class="md-nav__link">
+        文件结构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick-start.html" class="md-nav__link">
+        快速开始
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdk.html" class="md-nav__link">
+        SDK开发(TODO)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server.html" class="md-nav__link">
+        服务端开发(TODO)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workflow.html" class="md-nav__link">
+        工作流程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+          Front end
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          Front end
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../front-end/main.html" class="md-nav__link">
+        项目结构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../front-end/workflow.html" class="md-nav__link">
+        前端开发流程(TODO)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+          Server
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          Server
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/apis.html" class="md-nav__link">
+        API文档
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/postman.html" class="md-nav__link">
+        Project: SatelliteMonitorApis
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+          Tech selection
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          Tech selection
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          技术选型
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="monitor.html" class="md-nav__link md-nav__link--active">
+        技术选型
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    监控业务的技术选型
+  </a>
+  
+    <nav class="md-nav" aria-label="监控业务的技术选型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prometheus" class="md-nav__link">
+    为什么使用Prometheus作为主要监控系统
+  </a>
+  
+    <nav class="md-nav" aria-label="为什么使用Prometheus作为主要监控系统">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    竞品对比
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    谁在用
+  </a>
+  
+    <nav class="md-nav" aria-label="谁在用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    海外
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    国内
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    告警业务的选型
+  </a>
+  
+    <nav class="md-nav" aria-label="告警业务的选型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alertmanager" class="md-nav__link">
+    为什么使用AlertManager作为主要的告警系统
+  </a>
+  
+    <nav class="md-nav" aria-label="为什么使用AlertManager作为主要的告警系统">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    竞品对比
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    前端业务的技术选型
+  </a>
+  
+    <nav class="md-nav" aria-label="前端业务的技术选型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-nuxtjs" class="md-nav__link">
+    渲染框架 - Nuxt.js
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-pnpm" class="md-nav__link">
+    包管理工具 - pnpm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#js-vue3" class="md-nav__link">
+    JS框架 - Vue3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-antv" class="md-nav__link">
+    数据可视化 - AntV
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          For user
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          For user
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../for-user/quick-start.html" class="md-nav__link">
+        For User Quick Start
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    监控业务的技术选型
+  </a>
+  
+    <nav class="md-nav" aria-label="监控业务的技术选型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prometheus" class="md-nav__link">
+    为什么使用Prometheus作为主要监控系统
+  </a>
+  
+    <nav class="md-nav" aria-label="为什么使用Prometheus作为主要监控系统">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    竞品对比
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    谁在用
+  </a>
+  
+    <nav class="md-nav" aria-label="谁在用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    海外
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    国内
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    告警业务的选型
+  </a>
+  
+    <nav class="md-nav" aria-label="告警业务的选型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alertmanager" class="md-nav__link">
+    为什么使用AlertManager作为主要的告警系统
+  </a>
+  
+    <nav class="md-nav" aria-label="为什么使用AlertManager作为主要的告警系统">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    竞品对比
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    前端业务的技术选型
+  </a>
+  
+    <nav class="md-nav" aria-label="前端业务的技术选型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-nuxtjs" class="md-nav__link">
+    渲染框架 - Nuxt.js
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-pnpm" class="md-nav__link">
+    包管理工具 - pnpm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#js-vue3" class="md-nav__link">
+    JS框架 - Vue3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-antv" class="md-nav__link">
+    数据可视化 - AntV
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="_1">技术选型</h1>
+<blockquote>
+<p>目前先放一个md里</p>
+</blockquote>
+<h2 id="_2">监控业务的技术选型</h2>
+<h3 id="prometheus">为什么使用Prometheus作为主要监控系统</h3>
+<p>Prometheus是一款开源的监控和告警工具，其在云原生领域广泛应用。本项目选择使用Prometheus作为主要监控技术，是因为Prometheus具备以下优点：</p>
+<ul>
+<li>
+<p><strong>多维度数据模型</strong>：Prometheus采用多维度数据模型，可以通过标签对监控数据进行维度化的分类和聚合。这意味着在卫星性能监控系统中，可以方便地对卫星及其相关系统的各种性能指标进行监测，如CPU、内存、网络等，并对其进行分类和聚合分析，从而更好地理解卫星性能指标变化的趋势和规律。</p>
+</li>
+<li>
+<p><strong>数据采集灵活性</strong>：Prometheus支持多种数据采集方式，如客户端主动推送数据、服务器端定时拉取数据等。这使得Prometheus可以适应各种应用场景，并方便用户进行扩展和集成。在卫星性能监控系统中，Prometheus可以通过数据采集代理程序进行卫星及其相关系统的监测数据采集，而代理程序则可以通过卫星系统中的传感器等设备来收集性能指标数据。</p>
+</li>
+<li>
+<p><strong>可视化和查询</strong>：Prometheus提供了强大的查询语言和可视化工具，如PromQL和Grafana，可以对监测数据进行查询和可视化展示。这使得用户可以更加直观地理解卫星及其相关系统的性能数据变化，并对异常数据进行快速的诊断和分析。</p>
+</li>
+<li>
+<p><strong>生态系统丰富</strong>：Prometheus拥有广泛的生态系统，包括Exporter、AlertManager、PushGateway等，这些工具能够进一步丰富Prometheus的功能，并提供更加全面的监控解决方案。在卫星性能监控系统中，这些工具可以用于实现数据采集、告警通知、数据持久化等功能。</p>
+</li>
+</ul>
+<p>综上所述，Prometheus具备多维度数据模型、数据采集灵活性、可视化和查询、生态系统丰富等优点，因此适合作为卫星性能监控系统的主要监控技术。</p>
+<h4 id="_3">竞品对比</h4>
+<p>以下是一些其他监控系统与Prometheus的对比，以证明Prometheus作为卫星性能监控系统的主要监控技术的可行性：</p>
+<ol>
+<li>
+<p><strong>Zabbix VS Prometheus</strong>：Zabbix是一款流行的监控工具，具有强大的告警和可视化功能。但与Prometheus相比，Zabbix在扩展性、数据模型、数据采集和性能等方面存在一些限制。例如，Zabbix需要手动配置监控项和主机，而Prometheus则可以自动发现和注册目标。此外，Prometheus的数据模型更加灵活，可以方便地进行标签分类和聚合分析，而Zabbix则需要在应用中手动设置数据模型。</p>
+</li>
+<li>
+<p><strong>Nagios VS Prometheus</strong>：Nagios是一款老牌的监控工具，具有可扩展性、可定制性和丰富的插件生态系统。但与Prometheus相比，Nagios在数据模型、数据采集和可视化方面存在一些限制。例如，Nagios无法进行多维度数据分类和聚合，而Prometheus则支持标签分类和聚合分析。此外，Prometheus具有强大的查询语言和可视化工具，而Nagios则需要手动编写插件和脚本实现数据的可视化和查询。</p>
+</li>
+<li>
+<p><strong>InfluxDB VS Prometheus</strong>：InfluxDB是一款专门用于时序数据的数据库，具有高吞吐量、高性能和高可用性。但与Prometheus相比，InfluxDB在可扩展性和数据模型方面存在一些限制。例如，InfluxDB需要手动创建索引和分区，并且无法支持多维度数据模型，而Prometheus则可以自动创建索引和分区，并且支持标签分类和聚合分析。</p>
+</li>
+</ol>
+<h4 id="_4">谁在用</h4>
+<h5 id="_5">海外</h5>
+<p><img alt="" src="../../img/whouseprom.png" /></p>
+<h5 id="_6">国内</h5>
+<p>国内大厂的云监控业务均采用普罗米修斯作为主要的监控系统</p>
+<ul>
+<li>阿里云 - 云监控业务</li>
+<li>字节火山引擎 - 云监控业务</li>
+<li>百度智能云 - 监控业务</li>
+<li>腾讯云 - 云监控业务</li>
+</ul>
+<h2 id="_7">告警业务的选型</h2>
+<h3 id="alertmanager">为什么使用AlertManager作为主要的告警系统</h3>
+<p>AlertManager是一个开源的告警路由和处理工具，它与Prometheus紧密集成，是Prometheus监控体系中的重要组成部分。以下是本项目选择AlertManager作为主要技术的一些原因：</p>
+<ol>
+<li>
+<p><strong>高度可靠的告警处理</strong>：AlertManager具有高可用性和容错性，可以处理大量的告警和故障条件。它还提供了一些有用的特性，如静默期、抑制规则等，以减少无效或重复的告警。</p>
+</li>
+<li>
+<p><strong>与Prometheus紧密集成</strong>：AlertManager是Prometheus的默认告警处理工具，可以直接从Prometheus配置文件中引用。它还支持Prometheus的查询语言，可以轻松地编写复杂的告警规则。</p>
+</li>
+</ol>
+<p>综上所述，AlertManager是一款功能强大、高度可靠的告警处理工具，与Prometheus紧密集成，为本项目的告警业务提供了很多优势。通过AlertManager，我们可以灵活地管理和处理告警，快速地响应故障条件，提高系统的可靠性和可用性。</p>
+<h4 id="_8">竞品对比</h4>
+<ol>
+<li>
+<p><strong>PagerDuty</strong> PagerDuty是一家领先的数字运营管理平台，提供了完整的事件管理、故障管理、协作和自动化工具。PagerDuty的告警路由和处理功能与AlertManager类似，也支持多种接收器（如SMS、电话、邮件、Slack等），并可以根据告警级别和标签进行路由。PagerDuty还提供了一些其他功能，如可视化事件状态、自定义通知、Escalation Policy等，使得它可以作为一个全面的数字运营管理平台来使用。相对于AlertManager，PagerDuty的优势在于其全面的事件管理和自动化功能，它可以帮助企业更好地响应故障和事件，减少故障的影响。但是，PagerDuty很贵，对于小型企业而言可能不太适合。</p>
+</li>
+<li>
+<p><strong>Opsgenie</strong> Opsgenie是一款基于云的响应平台，为企业提供了强大的告警路由和处理功能。Opsgenie支持多种接收器（如SMS、电话、邮件、Slack等），并可以根据告警级别和标签进行路由。Opsgenie还提供了一些其他功能，如灵活的告警规则、可视化报表、自动化任务等，使得它可以作为一个全面的告警处理平台来使用。相对于AlertManager，Opsgenie的优势在于其更加全面的告警规则和自动化功能，可以帮助企业更好地管理和处理告警。但是，Opsgenie的定价也比AlertManager高，可能不适合小型企业。</p>
+</li>
+</ol>
+<h2 id="_9">前端业务的技术选型</h2>
+<h3 id="-nuxtjs">渲染框架 - Nuxt.js</h3>
+<p>Nuxt.js可以带给用户更好的体验，主要得益于其服务端渲染（SSR）的能力。与传统的客户端渲染（CSR）相比，服务端渲染可以提供更好的性能和用户体验。</p>
+<p>具体来说，服务端渲染可以在服务器端将Vue.js组件渲染为HTML字符串并发送到客户端，从而提高页面的加载速度和响应速度，进而提升用户的体验感受。以下是Nuxt.js服务端渲染的几个优势：</p>
+<ol>
+<li>
+<p><strong>加载速度更快</strong>：由于服务器端可以将页面渲染为HTML字符串并直接返回给客户端，因此可以减少页面的加载时间，提高用户的访问速度。</p>
+</li>
+<li>
+<p><del><strong>更好的SEO优化</strong></del>：由于搜索引擎可以更好地处理服务端渲染的HTML，因此可以更好地优化网站的SEO效果。（内网应用不需要SEO）</p>
+</li>
+<li>
+<p><strong>更好的用户体验</strong>：由于服务器端可以直接渲染出页面内容并返回给客户端，因此可以提高用户的体验感受。</p>
+</li>
+<li>
+<p><strong>更好的可维护性</strong>：由于Nuxt.js提供了很多开箱即用的特性，例如自动生成路由、自动生成页面等，因此可以减少代码的冗余，提高代码的可维护性。</p>
+</li>
+</ol>
+<p>有研究表明，性能指标与用户体验之间存在着相关性。例如，页面加载速度可以影响用户的满意度和留存率，而页面的FCP（First Contentful Paint）指标则可以影响用户的粘性。FCP指标是指页面在浏览器中第一次渲染出任何内容的时间点，通常被认为是用户开始感知页面加载速度的时间点。</p>
+<p>根据Google的研究，FCP小于100ms可以让用户认为页面瞬间加载，FCP小于1秒可以让用户感觉页面加载速度很快，FCP在3秒以上可以让用户感到页面加载速度很慢，并且会降低用户留存率。因此，提高页面的FCP可以有效提升用户的粘性和留存率。</p>
+<p>此外，Nuxt.js还具有打包体积小的优势，可以通过webpack进行优化。减小打包体积可以提高网站的加载速度，从而提升用户的访问体验。</p>
+<p>综上所述，采用Nuxt.js服务端渲染框架可以提高页面的FCP和加载速度，从而提升用户的体验感受和粘性。</p>
+<p>TODO: 贴SSR&amp;MPA和CSR&amp;SPA的跑分图</p>
+<p>TODO: 不知道Vite有没有对应的Bundle Analyzer，最好也贴个图</p>
+<h3 id="-pnpm">包管理工具 - pnpm</h3>
+<p>在项目中选择使用pnpm作为包管理工具相对于npm和yarn有以下优点：</p>
+<ol>
+<li>
+<p><strong>更快的安装速度</strong>：与npm和yarn相比，pnpm的安装速度更快。因为pnpm使用一种类似于硬链接的方式来安装依赖项，它可以避免在不同项目之间重复安装相同的依赖项。</p>
+</li>
+<li>
+<p><strong>更少的磁盘占用</strong>：与npm和yarn相比，pnpm占用更少的磁盘空间。当多个项目使用相同的依赖项时，npm和yarn会在每个项目中安装依赖项，而pnpm只会在磁盘上存储一份依赖项。</p>
+</li>
+<li>
+<p><strong>更好的兼容性</strong>：pnpm支持npm和yarn的大部分特性，包括锁定依赖项版本、私有模块、NPM脚本和NPM配置文件等。</p>
+</li>
+</ol>
+<p>有关npm和yarn与pnpm之间的比较，有一些基准测试已经表明，pnpm的性能在某些情况下比npm和yarn更好。例如，pnpm的安装速度可以比npm和yarn快10倍以上。同时，pnpm在安装依赖项时可以减少磁盘使用量，并提供更快的本地缓存。这些特性使得pnpm在大型项目中更具可扩展性和可维护性。</p>
+<p><del>## Monorepo - pnpm-workspace(虽然用了，但是好像没什么必要)</del></p>
+<h3 id="js-vue3">JS框架 - Vue3</h3>
+<p>Vue3作为新的Vue主版本，相对于Vue2有以下优势：</p>
+<ol>
+<li>
+<p><strong>更好的性能</strong>：Vue3通过重新设计Virtual DOM和响应式系统来提高性能。相较于Vue2，Vue3在渲染大型组件树时性能有了大幅度的提升，而且在打包大小上也做了优化，使得应用的首次加载时间更短。</p>
+</li>
+<li>
+<p><strong>更好的可维护性</strong>：Vue3引入了Composition API，使得组件的逻辑更容易复用和组合。这种新的API风格更加灵活，允许开发人员按照功能而不是类型组织代码，提高了代码的可读性和可维护性。</p>
+</li>
+<li>
+<p><strong>更好的类型支持</strong>：Vue3引入了TypeScript支持，允许开发人员在编写Vue应用时使用TypeScript的静态类型检查功能。这样可以更早地发现和修复类型相关的错误，提高代码的健壮性和可维护性。</p>
+</li>
+<li>
+<p><strong>更好的工具链</strong>：Vue3针对开发过程中的痛点做了一系列的优化，比如对单文件组件进行了改进，使得编写和调试更加便捷。同时，Vue3提供了一些新的工具，如Vite等，以提高开发效率。</p>
+</li>
+</ol>
+<p>综上所述，Vue3相较于Vue2、jQuery和纯JS具有更好的性能、更好的可维护性、更好的类型支持和更好的工具链。因此，在开发大型前端应用时，选择Vue3作为主要技术栈可以提高应用的开发效率和用户体验。</p>
+<h3 id="-antv">数据可视化 - AntV</h3>
+<p>相对于传统的Canvas图表开发，AntV具有以下优越性：</p>
+<ol>
+<li>
+<p><strong>简单易用</strong>：使用AntV可以轻松地创建各种图表，而且不需要手动处理Canvas的绘图过程。AntV提供了丰富的API和配置选项，可以快速创建出漂亮的图表效果。</p>
+</li>
+<li>
+<p><strong>高度可定制</strong>：AntV提供了很多可自定义的选项，如图表的样式、动画效果、交互方式等。而且，AntV可以通过自定义主题、组件等方式进行更深层次的定制。</p>
+</li>
+<li>
+<p><strong>兼容性好</strong>：AntV支持在各种主流浏览器、移动端设备、React、Vue等前端框架中使用，而且能够自适应不同的屏幕尺寸和设备类型。</p>
+</li>
+<li>
+<p><strong>强大的数据处理能力</strong>：AntV提供了多种数据格式的支持，如数组、JSON、CSV等。同时，AntV还提供了多种数据处理的API和功能，如数据过滤、数据映射等，能够快速处理海量数据。</p>
+</li>
+<li>
+<p><strong>大量实用的扩展插件</strong>：AntV提供了很多实用的扩展插件，如地图插件、时间线插件等。这些插件可以快速实现一些复杂的图表效果。</p>
+</li>
+</ol>
+<p>综上所述，相较于传统的Canvas图表开发，AntV具有更高的开发效率和更丰富的功能，能够满足各种图表需求，并且在可定制性、兼容性、数据处理能力等方面有很大优势。因此，在大型前端项目中使用AntV作为图表库，可以快速实现各种图表效果，提高应用的用户体验。</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../server/postman.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: Project: SatelliteMonitorApis" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  上一页
+                </span>
+                Project: SatelliteMonitorApis
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../for-user/quick-start.html" class="md-footer__link md-footer__link--next" aria-label="下一页: For User Quick Start" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  下一页
+                </span>
+                For User Quick Start
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "search.suggest", "search.highlight", "search.share", "navigation.footer"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+      
+    
+  </body>
+</html>
